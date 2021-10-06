@@ -44,21 +44,6 @@ export const NavItem = styled.div`
 export const SearchWrapper = styled.div`
   position: relative;
   float: left; // 因为之前NavItem元素都是float没有占位， 所以此处也要加float
-  //CSSTransition
-  .slide-enter{
-    width: 160px;
-    transition: all .2s ease-out;
-  }
-  .slide-enter-active{
-    width: 240px;
-  }
-  .slide-exit{
-    width: 240px;
-    transition: all .2s ease-out;
-  }
-  .slide-exit-active{
-    width: 160px;
-  }
   .iconfont {
     position: absolute;
     right: 5px;
@@ -93,6 +78,21 @@ export const NavSearch = styled.input.attrs({
   }
   &.focused {
     width: 240px;
+  }
+  //CSSTransition
+  &.slide-enter{
+    width: 160px;
+    transition: all .2s ease-out;
+  }
+  &.slide-enter-active{
+    width: 240px;
+  }
+  &.slide-exit{
+    width: 240px;
+    transition: all .2s ease-out;
+  }
+  &.slide-exit-active{
+    width: 160px;
   }
 `;
 
