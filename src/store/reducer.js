@@ -1,19 +1,16 @@
-const defaultState = {
-  focused: false
-};
+// import { combineReducers } from 'redux';
+// 引入redux-immutable之后 写成
+import { combineReducers } from 'redux-immutable';
+// import headerReducer from '../common/header/store/reducer'; 
+ // 在header/store里加index.js之后写成
+import {reducer as headerReducer} from '../common/header/store'
 
-// reducer导出的内容为纯函数 ，给固定的输入就会有固定的输出， 同时没有副作用， 不要把参数改变了， 这里接受两个参数 state和action
-// eslint-disable-next-line
-export default (state = defaultState, action) => {
-  if (action.type === 'search_focus') {
-    return {
-      focused: true
-    }
-  }
-  if (action.type === 'search_blur') {
-    return {
-      focused: false
-    }
-  }
-  return state;
-}
+const reducer = combineReducers ({
+  header: headerReducer
+})
+// 改成 import { combineReducers } from 'redux-immutable'之后
+// 所有combineReducers生成的reducer内容都是immutable的对象
+
+
+export default reducer;
+
