@@ -26,7 +26,6 @@ export default (state = defaultState, action) => {
     return state.set('focused', false); //此时的state已经是immutable不可改变对象了， .set的意思是结合之前immutable对象的值和设置的值，返回一个全新的对象， 并不会改变原始的immutable数据
   }
   if (action.type === actionTypes.CHANGE_LIST) {
-  
     return state.set('list', action.data);
   }
   return state;

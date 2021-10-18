@@ -25,16 +25,16 @@ class Header extends Component {
         <SearchInfo >
           <SearchInfoTitle>
             trending topics
-            <SearchInfoSwitch>change</SearchInfoSwitch>
+            <SearchInfoSwitch>More</SearchInfoSwitch>
           </SearchInfoTitle>
           <SearchInfoList>
             {
-              this.props.list. map((item) => {
+              this.props.list.map((item) => {
                 return  <SearchInfoItem key={item}>{item}</SearchInfoItem> 
               })
             }
           </SearchInfoList>
-        </SearchInfo> 
+        </SearchInfo>
       )
     }else {
       return null;
@@ -110,12 +110,13 @@ const mapDispatchToProps = (dispatch) => {
       // const action = actionCreators.searchFocus();
       // dispatch(action);
       // 简写成
-      dispatch(actionCreators.searchFocus());
+      // dispatch(actionCreators.searchFocus());
 
       // 在安装引入redux-thunk之后，action不仅仅可以是JS对象了也可以是一个函数，dispatch给store不光是JS对象还可以是函数
       // action是JS对象时，dispatch和以前一样把该对象直接传给store
       // action是函数时，dispatch会让这个函数先执行，执行完，需要dispatch给store时，再执行
       dispatch(actionCreators.getList());
+      dispatch(actionCreators.searchFocus());
     }, 
     handleInputBlur(){
       // const action = {
