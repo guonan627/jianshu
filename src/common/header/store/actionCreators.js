@@ -2,14 +2,7 @@ import * as actionTypes from './constants';
 import axios from 'axios'
 import { fromJS } from 'immutable';
 
-export const searchFocus = () => ({
-  type: actionTypes.SEARCH_FOCUS
-})
-
-export const searchBlur = () => ({
-  type: actionTypes.SEARCH_BLUR
-})
-
+// 不需要export的方法 都放在顶部或者底部
 const changeList = (data) => ({
   type: actionTypes.CHANGE_LIST,
   // data
@@ -19,6 +12,14 @@ const changeList = (data) => ({
   // 这里要用fromJS把data变成immutable数组
   data: fromJS(data) 
 });
+
+export const searchFocus = () => ({
+  type: actionTypes.SEARCH_FOCUS
+})
+
+export const searchBlur = () => ({
+  type: actionTypes.SEARCH_BLUR
+})
 
 export const getList = () => {
   return (dispatch) => {
